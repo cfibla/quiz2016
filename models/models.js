@@ -18,14 +18,16 @@ var storage = process.env.DATABASE_STORAGE;
 var Sequelize = require ('sequelize');
 
 //USAR DB SQLite o Postgres
-var sequelize = new Sequelize (DB_name, user, pwd,{
+var sequelize = new Sequelize (DB_name, user, pwd,
+{
 	dialect: protocol,
 	protocol: protocol,
 	port: port,
 	host: host,
 	storage: storage, //solo SQLite (.env)
 	omitNull: true	//solo Postgres
-});
+}
+);
 
 //IMPORTAR LA DEFINICIÓN DE LA TABLA QUIZ EN quiz.js
 var Quiz = sequelize.import(path.join(__dirname,'quiz'));
