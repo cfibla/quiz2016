@@ -41,7 +41,7 @@ sequelize.sync().then(function(){
 	//THEN(...) EJECUTA ESTE MANEJADOR UNA VEZ CREADA LA TABLA
 	//LA TABLA SOLO SE CREA SI ESTÁ VACÍA
 	Quiz.count().then(function(count){
-		if (count != 0) {
+		if (count === 0) {
 			Quiz.create({
 				pregunta: 	'Capital de Italia',
 				respuesta: 	'Roma' 
