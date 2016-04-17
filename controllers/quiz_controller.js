@@ -59,4 +59,4 @@ exports.create = function(req, res) {
 	quiz.save({fields: ["pregunta", "respuesta"]}).then(function(){
 		res.redirect('/quizes');// redirección a la lista de preguntas
 	})
-}
+};
