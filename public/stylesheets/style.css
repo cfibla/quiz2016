@@ -22,6 +22,10 @@ nav span {
 section > div {
 	padding: 20px;
 	}
+#ErrorMsgs {
+	color: #f61;
+	font-size: smaller
+}
 
 #page-wrap {
 	margin: 2% auto;
