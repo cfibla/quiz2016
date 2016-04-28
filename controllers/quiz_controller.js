@@ -57,7 +57,7 @@ exports.create = function(req, res) {
 
 	//función validate -- si hay algún error renderiza 'quizes/new' con los errores
 	quiz
-	.validate(notEmpty)
+	.validate
 	.then(
 		function(err){
 			if (err) {
