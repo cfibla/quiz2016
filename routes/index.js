@@ -14,9 +14,9 @@ router.param('quizId', quizController.load);
 
 //Definición de las rutas de /quizes
 router.get('/quizes',							quizController.index);
-router.get('/quizes/:quizId(\\d+)',				quizController.show);// muestra la pregunta y espera la respuesta
-router.get('/quizes/:quizId(\\d+)/answer',		quizController.answer);// respuesta correcta-incorrecta
-router.get('/quizes/new',						quizController.new);//formulario de nueva pregunta-respuesta
-router.post('/quizes/create',					quizController.create)//incluir nueva pregunta-respuesta en la DB
+router.get('/quizes/:quizId(\\d+)',				quizController.show); // muestra la pregunta y espera la respuesta
+router.get('/quizes/:quizId(\\d+)/answer',		quizController.answer); // respuesta correcta-incorrecta
+router.get('/quizes/new',						quizController.new); //formulario de nueva pregunta-respuesta
+router.post('/quizes/create',					quizController.create); //incluir nueva pregunta-respuesta en la DB
 
 module.exports = router;

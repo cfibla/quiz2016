@@ -56,7 +56,9 @@ exports.create = function(req, res) {
 	var quiz = models.Quiz.build (req.body.quiz);
 
 	//función validate -- si hay algún error renderiza 'quizes/new' con los errores
-	quiz.validate().then(
+	quiz
+	.validate()
+	.then(
 		function(err){
 			if (err) {
 				res.render ('quizes/new', {quiz: quiz, errors: err.errors});
