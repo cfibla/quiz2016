@@ -51,13 +51,13 @@ exports.new = function (req, res) {
 	res.render('quizes/new', {quiz: quiz, errors: []});
 };
 
-//POST /quizes/create
+//POST /quizes/create //función validate -- si hay algún error renderiza 'quizes/new' con los errores
 exports.create = function(req, res) {
 	var quiz = models.Quiz.build (req.body.quiz);
 
-	//función validate -- si hay algún error renderiza 'quizes/new' con los errores
+	
 	quiz
-	.validate
+	.validate()
 	.then(
 		function(err){
 			if (err) {
