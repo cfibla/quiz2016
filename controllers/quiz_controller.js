@@ -10,9 +10,9 @@ exports.load = function(req, res, next, quizId) {
 			if (quiz) {
 			req.quiz = quiz;
 			next();
-		} else { next (new Error('No existe quizId = ' + quizId));}
+		} else { next (new Error('No existe quizId = ' + quizId))}
 	}
-	).catch(function(error) { next (error);});
+	).catch(function(error) { next (error)});
 };
 
 //GET /quizes
@@ -21,7 +21,7 @@ exports.index = function(req, res){
 		function(quizes){
 			res.render('quizes/index', {quizes: quizes, errors: []});
 	}
-	).catch(function(error) { next (error);})
+	).catch(function(error) { next (error)})
 };
 
 //GET /quizes/:id
@@ -53,7 +53,7 @@ exports.new = function (req, res) {
 
 //POST /quizes/create //función validate -- si hay algún error renderiza 'quizes/new' con los errores
 exports.create = function(req, res) {
-	var quiz = models.Quiz.build (req.body.quiz);
+	var quiz = models.Quiz.build ( req.body.quiz );
 
 	
 	quiz
