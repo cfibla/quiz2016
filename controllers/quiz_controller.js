@@ -56,7 +56,8 @@ exports.create = function(req, res) {
 	var quiz = models.Quiz.build ( req.body.quiz );
 
 	
-	quiz
+	//quiz
+	sequelize
 	.validate()
 	.then(
 		function(err){
