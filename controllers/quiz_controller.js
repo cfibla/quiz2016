@@ -55,13 +55,10 @@ exports.new = function (req, res) {
 exports.create = function(req, res) {
 	var quiz = models.Quiz.build ( req.body.quiz );
 
-	
-	quiz
-	.validate()
-	.success(
-		function(err){
-			if (err) {
-				res.render ('quizes/new', {quiz: quiz, errors: err.errors});
+	quiz.validate().then(
+		function(error){
+			if (error) {
+				res.render ('quizes/new', {quiz: quiz, errors: error.errors});
 			} else {
 				//guarda en la DB los campos pregunta y respuesta de quiz
 				quiz
