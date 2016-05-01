@@ -55,17 +55,17 @@ exports.new = function (req, res) {
 exports.create = function(req, res) {
 	var quiz = models.Quiz.build ( req.body.quiz );
 
-	quiz.validate().then(
-		function(error){
-			if (error) {
-				res.render ('quizes/new', {quiz: quiz, errors: error.errors});
-			} else {
+//	quiz.validate().then(
+//		function(err) {
+//			if (err) {
+//				res.render ('quizes/new', {quiz: quiz, errors: err.errors});
+//			} else {
 				//guarda en la DB los campos pregunta y respuesta de quiz
 				quiz
 				.save({fields: ["pregunta", "respuesta"]})
 				.then( function(){ res.redirect('/quizes')})// redirección a la lista de preguntas
-			}
-		}
-	);
+//			}
+//		}
+//	);
 
 };
