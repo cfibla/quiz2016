@@ -18,5 +18,7 @@ router.get('/quizes/:quizId(\\d+)',				quizController.show); // muestra la pregu
 router.get('/quizes/:quizId(\\d+)/answer',		quizController.answer); // respuesta correcta-incorrecta
 router.get('/quizes/new',						quizController.new); //formulario de nueva pregunta-respuesta
 router.post('/quizes/create',					quizController.create); //incluir nueva pregunta-respuesta en la DB
+router.get('/quizes/:quizId(\\d+)/edit',		quizController.edit);
+router.put('/quizes/:quizId(\\d+)',				quizController.update);
 
 module.exports = router;
